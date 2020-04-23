@@ -3,6 +3,9 @@ sudo snap wait system seed.loaded
 sudo snap install microk8s --classic --channel=1.18/stable
 sudo wget https://microk8s.io/docs/containerd-template.toml -O /var/snap/microk8s/current/args/containerd-template.toml
 sudo sed -i "s/10.141.241.175:32000/$1/g" /var/snap/microk8s/current/args/containerd-template.toml
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
+echo "vagrant" | su - $USER
 SCRIPT
 
 Vagrant.configure("2") do |config|
