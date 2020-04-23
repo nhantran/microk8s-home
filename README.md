@@ -9,6 +9,11 @@
 
 #### Run
 ```
-$ git clone https://github.com/nhantran/microk8s-home.git
-$ cd microk8s-home && HOST_NAME=vm01 HOST_MEM=4096 HOST_CORE=2 HOST_DISK=50GB REGISTRY_ENDPOINT=192.168.0.101:5000 vagrant up
+wget https://raw.githubusercontent.com/nhantran/microk8s-home/master/Vagrantfile && \
+HOST_NAME=vm01 \
+HOST_MEM=4096 \
+HOST_CORE=2 \
+HOST_DISK=50GB \
+REGISTRY_ENDPOINT=192.168.0.101:5000 \
+vagrant up
 ```
