@@ -1,11 +1,11 @@
-#### Reprequisites:
+#### Prerequisites:
   * Vagrant 2.2.7
   * Following environment variables set:
-    * __*HOST_NAME*__
-    * __*HOST_MEM*__
-    * __*HOST_CORE*__
-    * __*HOST_DISK*__
-    * __*REGISTRY_ENDPOINT*__
+    * __*HOST_NAME*__ VM's host name
+    * __*HOST_MEM*__ memory allocated
+    * __*HOST_CORE*__ cores allocated
+    * __*HOST_DISK*__ hard-disk size allocated
+    * __*REGISTRY_ENDPOINT*__ external registry endpoint 
 
 #### Run
 ```
