@@ -1,3 +1,10 @@
+$script = <<-'SCRIPT'
+sudo snap wait system seed.loaded
+sudo snap install microk8s --classic --channel=1.18/stable
+sudo wget https://microk8s.io/docs/containerd-template.toml -O /var/snap/microk8s/current/args/containerd-template.toml
+sudo sed -i "s/10.141.241.175:32000/$1/g" /var/snap/microk8s/current/args/containerd-template.toml
+SCRIPT
+
 Vagrant.configure("2") do |config|
   config.vm.define ENV['HOST_NAME'] do |t|
   end
@@ -9,6 +16,9 @@ Vagrant.configure("2") do |config|
     v.memory = ENV['HOST_MEM']
     v.cpus = ENV['HOST_CORE']
   end
-  config.vm.provision "shell", path: "script.sh"
+  config.vm.provision "shell" do |s|
+    s.inline = $script
+    s.args   = "#{ENV['REGISTRY_ENDPOINT']}"
+  end
   config.disksize.size = ENV['HOST_DISK']
 end

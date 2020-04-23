@@ -5,10 +5,10 @@
     * __*HOST_MEM*__
     * __*HOST_CORE*__
     * __*HOST_DISK*__
-    * __REGISTRY_ENDPOINT__ (optional)
+    * __*REGISTRY_ENDPOINT*__
 
 #### Run
 ```
 $ git clone https://github.com/nhantran/microk8s-home.git
-$ cd microk8s-home && HOST_NAME=vm01 HOST_MEM=4G HOST_CORE=2 HOST_DISK=50G vagrant up
+$ cd microk8s-home && HOST_NAME=vm01 HOST_MEM=4096 HOST_CORE=2 HOST_DISK=50GB REGISTRY_ENDPOINT=192.168.0.101:5000 vagrant up
 ```
